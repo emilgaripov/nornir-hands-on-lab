@@ -1,0 +1,340 @@
+SW1:
+  port: 32779
+  hostname: 192.168.182.128
+  groups:
+    - nornir_labs
+  data:
+    tags:
+      - ios 15
+    about: 
+    - caption: SW1
+    interfaces:
+    - name: Ethernet
+      port_slot: 0/0
+      unused: 
+    - name: Ethernet
+      port_slot: 0/1
+      mode: access
+      vlan: 10
+    - name: Ethernet
+      port_slot: 0/2
+      mode: access
+      vlan: 20
+    - name: Ethernet
+      port_slot: 0/3
+      mode: access
+      vlan: 30
+    - name: Ethernet
+      port_slot: 1/0
+      mode: access
+      vlan: 40
+    - name: Ethernet
+      port_slot: 1/1
+      unused:  
+    - name: Ethernet
+      port_slot: 1/2
+      unused: 
+    - name: Ethernet
+      port_slot: 1/3
+      unused:
+    - name: Ethernet
+      port_slot: 2/0
+      unused:
+    - name: Ethernet
+      port_slot: 2/1
+      unused:
+    - name: Ethernet
+      port_slot: 2/2
+      mode: trunk
+      encapsulation: dot1q
+      allowed_vlan: 20,108
+      native_vlan: 108
+    - name: Ethernet
+      port_slot: 2/3
+      mode: trunk
+      encapsulation: dot1q
+      allowed_vlan: 20,108
+      native_vlan: 108
+    - name: Ethernet
+      port_slot: 3/0
+      allowed_vlan: 30,108
+      native_vlan: 108
+    - name: Ethernet
+      port_slot: 3/1
+      allowed_vlan: 30,108
+      native_vlan: 108
+    - name: Ethernet
+      port_slot: 3/2
+      mode: trunk
+      encapsulation: dot1q
+      allowed_vlan: 40,108
+      native_vlan: 108
+      negotiation: nonegotiate
+    - name: Ethernet
+      port_slot: 3/3
+      mode: trunk
+      encapsulation: dot1q
+      allowed_vlan: 40,108
+      native_vlan: 108
+      negotiation: nonegotiate
+    - name:  Vlan
+      port_slot: 1
+      unused: true 
+    - name:  Vlan
+      port_slot: 20
+      ipv4_address: 10.10.20.10 
+      ipv4_mask: 255.255.255.0
+    - name:  Vlan
+      port_slot: 30
+      ipv4_address: 10.10.30.10 
+      ipv4_mask: 255.255.255.0
+    - name:  Vlan
+      port_slot: 40
+      ipv4_address: 10.10.40.10 
+      ipv4_mask: 255.255.255.0
+  connection_options:
+    netmiko:
+       extras:
+         device_type: 'cisco_ios_telnet'
+    napalm:
+       extras:
+         optional_args:
+            transport: 'telnet'    
+SW2:
+  port: 32780
+  hostname: 192.168.182.128
+  groups:
+    - nornir_labs
+  data:
+    tags:
+      - ios 15
+    about: 
+    - caption: SW2
+    interfaces:
+    - name: Ethernet
+      port_slot: 0/0
+      unused: 
+    - name: Ethernet
+      port_slot: 0/1
+      unused: 
+    - name: Ethernet
+      port_slot: 0/2
+      mode: access
+      vlan: 20
+    - name: Ethernet
+      port_slot: 0/3
+      unused: 
+    - name: Ethernet
+      port_slot: 1/0
+      unused: 
+    - name: Ethernet
+      port_slot: 1/1
+      unused:  
+    - name: Ethernet
+      port_slot: 1/2
+      unused: 
+    - name: Ethernet
+      port_slot: 1/3
+      unused:
+    - name: Ethernet
+      port_slot: 2/0
+      unused:
+    - name: Ethernet
+      port_slot: 2/1
+      unused:
+    - name: Ethernet
+      port_slot: 2/2
+      mode: dynamic desirable
+      native_vlan: 108
+    - name: Ethernet
+      port_slot: 2/3
+      mode: dynamic desirable
+      native_vlan: 108
+    - name: Ethernet
+      port_slot: 3/0
+      unused:
+    - name: Ethernet
+      port_slot: 3/1
+      unused:
+    - name: Ethernet
+      port_slot: 3/2
+      unused:
+    - name: Ethernet
+      port_slot: 3/3
+      unused:
+    - name:  Vlan
+      port_slot: 1
+      unused: true 
+    - name:  Vlan
+      port_slot: 20
+      ipv4_address: 10.10.20.20 
+      ipv4_mask: 255.255.255.0
+  connection_options:
+    netmiko:
+       extras:
+         device_type: 'cisco_ios_telnet'
+    napalm:
+       extras:
+         optional_args:
+            transport: 'telnet'    
+SW3:
+  port: 32781
+  hostname: 192.168.182.128
+  groups:
+    - nornir_labs
+  data:
+    tags:
+      - ios 15
+    about: 
+    - caption: SW3
+    interfaces:
+    - name: Ethernet
+      port_slot: 0/0
+      unused: 
+    - name: Ethernet
+      port_slot: 0/1
+      unused: 
+    - name: Ethernet
+      port_slot: 0/2
+      mode: access
+      vlan: 30
+    - name: Ethernet
+      port_slot: 0/3
+      unused: 
+    - name: Ethernet
+      port_slot: 1/0
+      unused: 
+    - name: Ethernet
+      port_slot: 1/1
+      unused:  
+    - name: Ethernet
+      port_slot: 1/2
+      unused: 
+    - name: Ethernet
+      port_slot: 1/3
+      unused:
+    - name: Ethernet
+      port_slot: 2/0
+      unused:
+    - name: Ethernet
+      port_slot: 2/1
+      unused:
+    - name: Ethernet
+      port_slot: 2/2
+      unused: 
+    - name: Ethernet
+      port_slot: 2/3
+      unused: 
+    - name: Ethernet
+      port_slot: 3/0
+      mode: trunk
+      encapsulation: dot1q
+      native_vlan: 108
+    - name: Ethernet
+      port_slot: 3/1
+      mode: trunk
+      encapsulation: dot1q
+      native_vlan: 108
+    - name: Ethernet
+      port_slot: 3/2
+      unused: 
+    - name: Ethernet
+      port_slot: 3/3
+      unused: 
+    - name:  Vlan
+      port_slot: 1
+      unused:  
+    - name:  Vlan
+      port_slot: 30
+      ipv4_address: 10.10.30.30 
+      ipv4_mask: 255.255.255.0
+  connection_options:
+    netmiko:
+       extras:
+         device_type: 'cisco_ios_telnet'
+    napalm:
+       extras:
+         optional_args:
+            transport: 'telnet'    
+SW4:
+  port: 32782
+  hostname: 192.168.182.128
+  groups:
+    - nornir_labs
+  data:
+    tags:
+      - ios 15
+    about: 
+    - caption: SW4
+    interfaces:
+    - name: Ethernet
+      port_slot: 0/0
+      unused: 
+    - name: Ethernet
+      port_slot: 0/1
+      unused: 
+    - name: Ethernet
+      port_slot: 0/2
+      mode: access
+      vlan: 40
+    - name: Ethernet
+      port_slot: 0/3
+      mode: access
+      vlan: 40
+    - name: Ethernet
+      port_slot: 1/0
+      unused: 
+    - name: Ethernet
+      port_slot: 1/1
+      unused:  
+    - name: Ethernet
+      port_slot: 1/2
+      unused: 
+    - name: Ethernet
+      port_slot: 1/3
+      unused:
+    - name: Ethernet
+      port_slot: 2/0
+      unused:
+    - name: Ethernet
+      port_slot: 2/1
+      unused:
+    - name: Ethernet
+      port_slot: 2/2
+      unused: 
+    - name: Ethernet
+      port_slot: 2/3
+      unused: 
+    - name: Ethernet
+      port_slot: 3/0
+      unused: 
+    - name: Ethernet
+      port_slot: 3/1
+      unused: 
+    - name: Ethernet
+      port_slot: 3/2
+      mode: trunk
+      encapsulation: dot1q
+      native_vlan: 108
+      negotiation: nonegotiate
+    - name: Ethernet
+      port_slot: 3/3
+      mode: trunk
+      encapsulation: dot1q
+      native_vlan: 108
+      negotiation: nonegotiate
+    - name:  Vlan
+      port_slot: 1
+      unused: true 
+    - name:  Vlan
+      port_slot: 40
+      ipv4_address: 10.10.40.40 
+      ipv4_mask: 255.255.255.0
+  connection_options:
+    netmiko:
+       extras:
+         device_type: 'cisco_ios_telnet'
+    napalm:
+       extras:
+         optional_args:
+            transport: 'telnet'

@@ -1,0 +1,45 @@
+{% for interface in host["interfaces"] %}
+interface {{ interface.name }}{{ interface.port_slot }}
+{% if interface.unused is defined %}
+shutdown
+{% elif interface.vlan is defined %}
+switchport mode {{ interface.mode }}
+switchport access vlan {{ interface.vlan }}
+no shutdown
+{% elif interface.allowed_vlan is defined and interface.negotiation is defined %}
+switchport trunk allowed vlan {{ interface.allowed_vlan }}
+switchport trunk encapsulation {{ interface.encapsulation }}
+switchport trunk native vlan {{ interface.native_vlan }}
+switchport mode {{ interface.mode }}
+switchport {{ interface.negotiation }}
+no shutdown
+{% elif interface.negotiation is defined %}
+switchport trunk encapsulation {{ interface.encapsulation }}
+switchport trunk native vlan {{ interface.native_vlan }}
+switchport mode {{ interface.mode }}
+switchport {{ interface.negotiation }}
+no shutdown
+{% elif interface.mode is defined and interface.allowed_vlan is defined %}
+switchport trunk allowed vlan {{ interface.allowed_vlan }}
+switchport trunk encapsulation {{ interface.encapsulation }}
+switchport trunk native vlan {{ interface.native_vlan }}
+switchport mode {{ interface.mode }}
+no shutdown
+{% elif interface.encapsulation is defined and interface.native_vlan is defined %}
+switchport trunk encapsulation {{ interface.encapsulation }}
+switchport trunk native vlan {{ interface.native_vlan }}
+switchport mode {{ interface.mode }}
+no shutdown
+{% elif interface.native_vlan is defined and interface.mode is defined %}
+switchport trunk native vlan {{ interface.native_vlan }}
+switchport mode {{ interface.mode }}
+no shutdown
+{% elif interface.native_vlan is defined and interface.allowed_vlan is defined %}
+switchport trunk native vlan {{ interface.native_vlan }}
+switchport trunk allowed vlan {{ interface.allowed_vlan }}
+no shutdown
+{% elif interface.ipv4_address is defined %}
+ip address {{ interface.ipv4_address }} {{ interface.ipv4_mask }}
+no shutdown   
+{% endif %}
+{% endfor %}
