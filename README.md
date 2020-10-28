@@ -114,7 +114,8 @@ As a result of running this part of the code, the ping will be sent to all devic
 git clone https://github.com/emilgaripov/nornir-hands-on-lab
 ```
 2. cd into directory
-```cd nornir-hands-on-lab/device_configuration
+```
+cd nornir-hands-on-lab/device_configuration
 ```
 3. Run the script by typing ```python3 devices_config.py``` and the script will execute. 
 
