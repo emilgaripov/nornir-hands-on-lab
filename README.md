@@ -28,16 +28,20 @@ Conditions of hands-on work:
 ![alt tag](https://github.com/emilgaripov/nornir_workshop/blob/master/topology.png)​
 # Rendering configuration in Nornir using Jinja2.
 Jinja2 is a modern, user-friendly, full-featured template creation language for Python. Two configuration templates are used in this lab work.  These are hostnames.j2 and interfaces.j2, each of which will create configurations for hostname and device interfaces respectively. 
-They are located in the "templates" directory.
-The hostnames.j2 template looks like this:
 
+They are located in the "templates" directory.
+
+The hostnames.j2 template looks like this:
+'''
 {% for hostname in host["about"] %}
 hostname {{the hostname.caption }}.
 {% endfor %}
+'''
+
 The "Text" plugin is responsible for using Jinja templates in Nornir. The function "text.template_file" is used in this lab work. It renders the file data in the file "hosts.yaml" and converts the inventory data in this file into configuration using the template file.
 
 The part of the code responsible for this task looks like this:
-
+'''
 def hostname_config(task):
     var = task.run(task=text.template_file,
                    name="Switches hostname configuration",
@@ -46,12 +50,13 @@ def hostname_config(task):
     task.host["hostname_config"] = var.result    task.run(task=networking.netmiko_send_config,
              name="Configure hostname on the device",
              config_commands=task.host["hostname_config"],)
+'''
 
 As a result of running this part of the code, the «hostname» will be configured for all devices.
  
 
 The following part of the code is responsible for configuring the interfaces of network devices.
-
+'''
 def interfaces_config(task):
     var = task.run(task=text.template_file,
                    name="Switches interface configuration",
@@ -61,19 +66,19 @@ def interfaces_config(task):
     task=networking.netmiko_send_config,
     name="Loading Configuration on the device",
     config_commands=task.host["interfaces_config"].splitlines())
-
+'''
 As a result of running this part of the code, the interfaces will be configured for all devices according to conditions of laboratory work.
 
 
 
 The following part of the code is responsible for sending ping from SW1 to ip address 255.255.255.255
-
+'''
 def send_ping(task):
 task.run(
 task=networking.netmiko_send_command, delay_factor=2, 
 max_loops=500,
 command_string='ping 255.255.255.255',
 name="Sending Ping on the device")
-
+'''
 As a result of running this part of the code, the ping will be sent to all devices.
 
