@@ -32,7 +32,7 @@ Conditions of hands-on lab:
 15.	After applying the configuration on network devices send ping from SW1 to ip address 255.255.255.255. All IP addresses configured on the switches should answer to the ping.
 
 # Topology
-[![topology](https://github.com/emilgaripov/nornir_workshop/blob/master/topology.png)]​
+![topology](https://github.com/emilgaripov/nornir_workshop/blob/master/topology.png)
 
 # Rendering configuration in Nornir using Jinja2.
 Jinja2 is a modern, user-friendly, full-featured template creation language for Python. Two configuration templates are used in this lab work.  These are hostnames.j2 and interfaces.j2, each of which will create configurations for hostname and device interfaces respectively. 
@@ -79,7 +79,7 @@ def hostname_config(task):
 ```
 
 As a result of running this part of the code, the «hostname» will be configured for all devices.
-[![hostname](https://github.com/emilgaripov/nornir_workshop/blob/master/hostname.png)]​ 
+![hostname](https://github.com/emilgaripov/nornir_workshop/blob/master/hostname.png)
 
 The following part of the code is responsible for configuring the interfaces of network devices.
 ```python
@@ -107,7 +107,7 @@ command_string='ping 255.255.255.255',
 name="Sending Ping on the device")
 ```
 As a result of running this part of the code, the ping will be sent to all devices.
-[![ping](https://github.com/emilgaripov/nornir_workshop/blob/master/ping.png)]​ 
+[ping](https://github.com/emilgaripov/nornir_workshop/blob/master/ping.png) 
 
 # How to Use
 
