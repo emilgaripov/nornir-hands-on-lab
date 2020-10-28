@@ -5,8 +5,12 @@ Nornir framework is fully written in the Python programming language and is inte
 # Note: 
 Please note that below scripts/libraries or configurations are for learning purposes only, do not use them in production environment.
 
+# Dependencies
+```pip3 install nornir"<3"
+```
+
 # Introduction:
-We will need to generate a configuration template according to the lab work described below using the Nornir framework and apply the configuration to network devices.
+We will need to generate a configuration template according to the lab work described below using the Nornir framework(version2!) and apply the configuration to network devices(switches).
 Conditions of hands-on lab:
 
 1.	On SW1, the interfaces eth0/1, eth0/2, eth0/3, eth1/0 should be in access mode in such VLANs respectively: 10, 20, 30, 40.
@@ -27,6 +31,7 @@ Conditions of hands-on lab:
 
 # Topology
 ![alt tag](https://github.com/emilgaripov/nornir_workshop/blob/master/topology.png)​
+
 # Rendering configuration in Nornir using Jinja2.
 Jinja2 is a modern, user-friendly, full-featured template creation language for Python. Two configuration templates are used in this lab work.  These are hostnames.j2 and interfaces.j2, each of which will create configurations for hostname and device interfaces respectively. 
 
@@ -101,3 +106,21 @@ name="Sending Ping on the device")
 ```
 As a result of running this part of the code, the ping will be sent to all devices.
 ![alt tag](https://github.com/emilgaripov/nornir_workshop/blob/master/ping.png)​ 
+
+# How to Use
+
+1. Clone the repo
+```
+git clone https://github.com/emilgaripov/nornir-hands-on-lab
+```
+2. cd into directory
+```cd nornir-hands-on-lab/device_configuration
+```
+3. Run the script by typing ```python3 devices_config.py``` and the script will execute. 
+
+# About me
+My name is Emil Garipov - Network automation enthusiast, teacher, pythonist, Cisco Champion 2020.
+# Contact
+[Twitter](https://twitter.com/gissarsky)
+[LinkedIn](https://www.linkedin.com/in/garipov/)
+
