@@ -1,3 +1,4 @@
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/emilgaripov/nornir-hands-on-lab)
 # Nornir hands-on lab
 When interacting with a new network, we need a way to automatically configure all network devices. And the Nornir framework can help solve this problem.
 Nornir framework is fully written in the Python programming language and is intended for use with Python.
