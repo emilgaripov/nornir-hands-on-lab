@@ -6,7 +6,8 @@ Nornir framework is fully written in the Python programming language and is inte
 Please note that below scripts/libraries or configurations are for learning purposes only, do not use them in production environment.
 
 # Dependencies
-```pip3 install nornir"<3"
+```
+pip3 install nornir"<3"
 ```
 
 # Introduction:
