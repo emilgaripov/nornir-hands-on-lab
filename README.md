@@ -79,7 +79,7 @@ def hostname_config(task):
 ```
 
 As a result of running this part of the code, the «hostname» will be configured for all devices.
-![hostname](https://github.com/emilgaripov/nornir_workshop/blob/master/hostname.png)
+![hostname](hostname.png)
 
 The following part of the code is responsible for configuring the interfaces of network devices.
 ```python
@@ -107,7 +107,7 @@ command_string='ping 255.255.255.255',
 name="Sending Ping on the device")
 ```
 As a result of running this part of the code, the ping will be sent to all devices.
-![ping](https://github.com/emilgaripov/nornir_workshop/blob/master/ping.png)
+![ping](ping.png)
 
 # How to Use
 
