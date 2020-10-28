@@ -2,7 +2,8 @@
 When interacting with a new network, we need a way to automatically configure all network devices. And the Nornir framework can help solve this problem.
 Nornir framework is fully written in the Python programming language and is intended for use with Python.
 
-Note: Please note that below scripts/libraries or configurations are for learning purposes only, do not use them in production environment.
+# Note: 
+Please note that below scripts/libraries or configurations are for learning purposes only, do not use them in production environment.
 
 # Introduction:
 We will need to generate a configuration template according to the lab work described below using the Nornir framework and apply the configuration to network devices.
