@@ -7,7 +7,7 @@ Please note that below scripts/libraries or configurations are for learning purp
 
 # Introduction:
 We will need to generate a configuration template according to the lab work described below using the Nornir framework and apply the configuration to network devices.
-Conditions of hands-on work:
+Conditions of hands-on lab:
 
 1.	On SW1, the interfaces eth0/1, eth0/2, eth0/3, eth1/0 should be in access mode in such VLANs respectively: 10, 20, 30, 40.
 2.	On SW2: the eth0/2 interface should be in VLAN 20 access mode. 
@@ -37,6 +37,24 @@ The hostnames.j2 template looks like this:
 {% for hostname in host["about"] %}
 hostname {{the hostname.caption }}.
 {% endfor %}
+```
+The part of interfaces.j2 template looks like this:
+```jinja2
+{% for interface in host["interfaces"] %}
+interface {{ interface.name }}{{ interface.port_slot }}
+{% if interface.unused is defined %}
+shutdown
+{% elif interface.vlan is defined %}
+switchport mode {{ interface.mode }}
+switchport access vlan {{ interface.vlan }}
+no shutdown
+{% elif interface.allowed_vlan is defined and interface.negotiation is defined %}
+switchport trunk allowed vlan {{ interface.allowed_vlan }}
+switchport trunk encapsulation {{ interface.encapsulation }}
+switchport trunk native vlan {{ interface.native_vlan }}
+switchport mode {{ interface.mode }}
+switchport {{ interface.negotiation }}
+no shutdown
 ```
 
 The "Text" plugin is responsible for using Jinja templates in Nornir. The function "text.template_file" is used in this lab work. It renders the file data in the file "hosts.yaml" and converts the inventory data in this file into configuration using the template file.
