@@ -1,4 +1,4 @@
-# Nornir workshop
+# Nornir hands-on lab
 When interacting with a new network, we need a way to automatically configure all network devices. And the Nornir framework can help solve this problem.
 Nornir framework is fully written in the Python programming language and is intended for use with Python.
 
@@ -53,7 +53,7 @@ def hostname_config(task):
 ```
 
 As a result of running this part of the code, the «hostname» will be configured for all devices.
- 
+![alt tag](https://github.com/emilgaripov/nornir_workshop/blob/master/hostname.png)​ 
 
 The following part of the code is responsible for configuring the interfaces of network devices.
 ```python
@@ -81,4 +81,4 @@ command_string='ping 255.255.255.255',
 name="Sending Ping on the device")
 ```
 As a result of running this part of the code, the ping will be sent to all devices.
-
+![alt tag](https://github.com/emilgaripov/nornir_workshop/blob/master/ping.png)​ 
