@@ -122,5 +122,6 @@ git clone https://github.com/emilgaripov/nornir-hands-on-lab
 My name is Emil Garipov - Network automation enthusiast, teacher, pythonist, Cisco Champion 2020.
 # Contact
 [Twitter](https://twitter.com/gissarsky)
+
 [LinkedIn](https://www.linkedin.com/in/garipov/)
 
