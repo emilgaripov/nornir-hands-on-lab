@@ -107,7 +107,7 @@ command_string='ping 255.255.255.255',
 name="Sending Ping on the device")
 ```
 As a result of running this part of the code, the ping will be sent to all devices.
-[ping](https://github.com/emilgaripov/nornir_workshop/blob/master/ping.png) 
+![ping](https://github.com/emilgaripov/nornir_workshop/blob/master/ping.png)
 
 # How to Use
 
